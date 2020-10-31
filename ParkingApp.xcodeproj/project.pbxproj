@@ -15,6 +15,11 @@
 		CA8127AA254E0BE700C58119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8127A8254E0BE700C58119 /* LaunchScreen.storyboard */; };
 		CA8127B5254E0BE700C58119 /* ParkingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8127B4254E0BE700C58119 /* ParkingAppTests.swift */; };
 		CA8127C0254E0BE700C58119 /* ParkingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8127BF254E0BE700C58119 /* ParkingAppUITests.swift */; };
+		CA8127D1254E10D200C58119 /* EmptyLotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8127D0254E10D200C58119 /* EmptyLotView.xib */; };
+		CA8127D6254E13F400C58119 /* EmptyLotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8127D5254E13F400C58119 /* EmptyLotView.swift */; };
+		CABD226F254E234C00588E70 /* ParkingLotInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD226E254E234C00588E70 /* ParkingLotInfo.swift */; };
+		CABD2274254E246000588E70 /* ParkingLotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD2273254E246000588E70 /* ParkingLotAnnotation.swift */; };
+		CABD2279254E250100588E70 /* ParkingLotLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD2278254E250100588E70 /* ParkingLotLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		CA8127BB254E0BE700C58119 /* ParkingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8127BF254E0BE700C58119 /* ParkingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAppUITests.swift; sourceTree = "<group>"; };
 		CA8127C1254E0BE700C58119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA8127D0254E10D200C58119 /* EmptyLotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyLotView.xib; sourceTree = "<group>"; };
+		CA8127D5254E13F400C58119 /* EmptyLotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLotView.swift; sourceTree = "<group>"; };
+		CABD226E254E234C00588E70 /* ParkingLotInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotInfo.swift; sourceTree = "<group>"; };
+		CABD2273254E246000588E70 /* ParkingLotAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotAnnotation.swift; sourceTree = "<group>"; };
+		CABD2278254E250100588E70 /* ParkingLotLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,11 @@
 				CA8127A6254E0BE700C58119 /* Assets.xcassets */,
 				CA8127A8254E0BE700C58119 /* LaunchScreen.storyboard */,
 				CA8127AB254E0BE700C58119 /* Info.plist */,
+				CA8127D0254E10D200C58119 /* EmptyLotView.xib */,
+				CA8127D5254E13F400C58119 /* EmptyLotView.swift */,
+				CABD226E254E234C00588E70 /* ParkingLotInfo.swift */,
+				CABD2273254E246000588E70 /* ParkingLotAnnotation.swift */,
+				CABD2278254E250100588E70 /* ParkingLotLocationView.swift */,
 			);
 			path = ParkingApp;
 			sourceTree = "<group>";
@@ -233,6 +248,7 @@
 			files = (
 				CA8127AA254E0BE700C58119 /* LaunchScreen.storyboard in Resources */,
 				CA8127A7254E0BE700C58119 /* Assets.xcassets in Resources */,
+				CA8127D1254E10D200C58119 /* EmptyLotView.xib in Resources */,
 				CA8127A5254E0BE200C58119 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABD2279254E250100588E70 /* ParkingLotLocationView.swift in Sources */,
 				CA8127A2254E0BE200C58119 /* ViewController.swift in Sources */,
+				CABD226F254E234C00588E70 /* ParkingLotInfo.swift in Sources */,
 				CA81279E254E0BE200C58119 /* AppDelegate.swift in Sources */,
+				CABD2274254E246000588E70 /* ParkingLotAnnotation.swift in Sources */,
+				CA8127D6254E13F400C58119 /* EmptyLotView.swift in Sources */,
 				CA8127A0254E0BE200C58119 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
