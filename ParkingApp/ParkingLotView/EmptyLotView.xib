@@ -39,12 +39,11 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="fBh-TS-Yce" secondAttribute="trailing" constant="7" id="GQJ-ax-Wgb"/>
                         <constraint firstItem="fBh-TS-Yce" firstAttribute="top" secondItem="vk9-MZ-vCf" secondAttribute="top" constant="3" id="QEP-xE-az9"/>
                         <constraint firstAttribute="width" constant="73" id="YfK-Bd-zRR"/>
                         <constraint firstItem="O2b-8W-H7b" firstAttribute="centerX" secondItem="vk9-MZ-vCf" secondAttribute="centerX" id="cX8-yO-6De"/>
-                        <constraint firstItem="fBh-TS-Yce" firstAttribute="leading" secondItem="vk9-MZ-vCf" secondAttribute="leading" constant="7" id="dih-K3-p06"/>
                         <constraint firstAttribute="height" constant="101" id="o4V-uy-9ZY"/>
+                        <constraint firstItem="fBh-TS-Yce" firstAttribute="centerX" secondItem="vk9-MZ-vCf" secondAttribute="centerX" id="qyG-A3-sDz"/>
                         <constraint firstItem="O2b-8W-H7b" firstAttribute="top" secondItem="fBh-TS-Yce" secondAttribute="bottom" constant="2" id="yfh-vV-AtC"/>
                     </constraints>
                 </view>

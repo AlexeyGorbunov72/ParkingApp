@@ -12,6 +12,7 @@ class ParkingLotLocationView: MKAnnotationView{
     required override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         setupUI()
+        
     }
     
     @available(*, unavailable)
@@ -20,13 +21,11 @@ class ParkingLotLocationView: MKAnnotationView{
     }
 
     private func setupUI() {
-        let view = EmptyLotView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        let tapGestoreRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnMe(_ : )))
-        self.isUserInteractionEnabled = true
-        self.addGestureRecognizer(tapGestoreRecognizer)
-        addSubview(view)
+        let view = EmptyLotView()
+        view.countFreeSpaces = Int.random(in: -100..<100)
+        self.addSubview(view)
+        self.frame = view.bounds
+       
     }
-    @objc func tapOnMe(_ gestue: UITapGestureRecognizer){
-       print("it's work!")
-    }
+
 }

@@ -109,6 +109,7 @@
 		CA81279C254E0BE200C58119 /* ParkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				CABD227D254F566E00588E70 /* ParkingLotView */,
 				CA81279D254E0BE200C58119 /* AppDelegate.swift */,
 				CA81279F254E0BE200C58119 /* SceneDelegate.swift */,
 				CA8127A1254E0BE200C58119 /* ViewController.swift */,
@@ -116,8 +117,6 @@
 				CA8127A6254E0BE700C58119 /* Assets.xcassets */,
 				CA8127A8254E0BE700C58119 /* LaunchScreen.storyboard */,
 				CA8127AB254E0BE700C58119 /* Info.plist */,
-				CA8127D0254E10D200C58119 /* EmptyLotView.xib */,
-				CA8127D5254E13F400C58119 /* EmptyLotView.swift */,
 				CABD226E254E234C00588E70 /* ParkingLotInfo.swift */,
 				CABD2273254E246000588E70 /* ParkingLotAnnotation.swift */,
 				CABD2278254E250100588E70 /* ParkingLotLocationView.swift */,
@@ -141,6 +140,15 @@
 				CA8127C1254E0BE700C58119 /* Info.plist */,
 			);
 			path = ParkingAppUITests;
+			sourceTree = "<group>";
+		};
+		CABD227D254F566E00588E70 /* ParkingLotView */ = {
+			isa = PBXGroup;
+			children = (
+				CA8127D0254E10D200C58119 /* EmptyLotView.xib */,
+				CA8127D5254E13F400C58119 /* EmptyLotView.swift */,
+			);
+			path = ParkingLotView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

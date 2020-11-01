@@ -13,7 +13,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         setupMap()
         addAnnotations()
-        print("!", parkingMap.visibleAnnotations().count)
+        
+        
     }
     private func setupMap(){
         parkingMap.delegate = self
@@ -24,8 +25,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     func addAnnotations(){
         var annotations: [ParkingLotAnnotation] = []
-        let min = -0.0001
-        let max = 0.0001
+        let min = -0.01
+        let max = 0.01
         for i in 0..<10{
             let bubbleLatitude = 59.9394619 + Double.random(in: min...max)
             let bubbleLongitude = 30.3146286 + Double.random(in: min...max)
@@ -33,6 +34,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         }
         parkingMap.addAnnotations(annotations)
+        
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
         {

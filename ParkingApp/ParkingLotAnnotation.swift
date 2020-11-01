@@ -13,7 +13,6 @@ class ParkingLotAnnotation: NSObject, MKAnnotation
     var info: ParkingLotInfo
     required init(info: ParkingLotInfo, position: CLLocationCoordinate2D)
     {
-        
         coordinate = position
         self.info = info
     }
