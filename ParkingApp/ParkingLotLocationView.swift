@@ -8,8 +8,9 @@
 import MapKit
 class ParkingLotLocationView: MKAnnotationView{
 
-   
+    var view: EmptyLotView
     required override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        view = EmptyLotView()
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         setupUI()
         
@@ -21,7 +22,6 @@ class ParkingLotLocationView: MKAnnotationView{
     }
 
     private func setupUI() {
-        let view = EmptyLotView()
         view.countFreeSpaces = Int.random(in: -100..<100)
         self.addSubview(view)
         self.frame = view.bounds

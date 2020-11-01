@@ -8,7 +8,7 @@
 import UIKit
 
 class EmptyLotView: UIView {
-   
+    var isOpenFull = false
     var backgroundView: UIView?
     @IBOutlet var pic: UIImageView?
     @IBOutlet var label: UILabel?
@@ -22,20 +22,33 @@ class EmptyLotView: UIView {
         }
     }
     private func setFree(){
-        self.backgroundView!.backgroundColor = .green
         self.label?.text = "\(countFreeSpaces)"
+        self.frame.size = pic!.frame.size
+        self.frame.size.height += 5
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.preferredFramesPerSecond60, .transitionFlipFromLeft], animations: {
+            self.layoutIfNeeded()
+            self.backgroundView!.backgroundColor = .green
+        }, completion: nil)
+        
     }
     private func setOccupated(){
-        self.backgroundView!.backgroundColor = .systemPink
         self.label?.text = ""
+        self.frame.size = pic!.frame.size
+        self.frame.size.height += 5
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.preferredFramesPerSecond60, .layoutSubviews, .curveEaseOut], animations: {
+            self.layoutIfNeeded()
+            self.backgroundView!.backgroundColor = .systemPink
+        }, completion: nil)
+       
         
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        
     }
     convenience init(){
-        self.init(frame: CGRect(x: 0, y: 0, width: 73, height: 101))
+        self.init(frame: CGRect(x: 0, y: 0, width: 73, height: 64))
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -46,6 +59,7 @@ class EmptyLotView: UIView {
         backgroundView = viewFromNib.subviews[0]
         backgroundView!.frame = self.bounds
         backgroundView!.layer.cornerRadius = 10
+        backgroundView?.clipsToBounds = true
         addSubview(backgroundView!)
         NSLayoutConstraint.activate([
             backgroundView!.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
@@ -56,7 +70,28 @@ class EmptyLotView: UIView {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(_:)))
         backgroundView!.addGestureRecognizer(gesture)
     }
+    private func openToFull(){
+        self.frame.size = CGSize(width: 73, height: 101)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.preferredFramesPerSecond60, .curveEaseOut], animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 5){
+            DispatchQueue.main.async {
+                self.setFree()
+                self.isOpenFull = false
+            }
+        }
+    }
     @objc func calloutTapped(_ sender: UITapGestureRecognizer) {
-        print("fuck shit")
+        if isOpenFull {
+            setFree()
+            isOpenFull = false
+            
+        } else if countFreeSpaces > 0{
+            openToFull()
+            isOpenFull = true
+        }
+                   
     }
 }

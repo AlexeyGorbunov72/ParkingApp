@@ -34,7 +34,21 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         }
         parkingMap.addAnnotations(annotations)
+        DispatchQueue.global(qos: .background).async{
+            return
+            while true{
+                sleep(1)
+                DispatchQueue.background(delay: 1, completion: {
+                    self.fuck()
+                })
+            }
+        }
         
+        
+    }
+    func fuck(){
+        let f = self.parkingMap.visibleAnnotations(parkingMap: self.parkingMap).randomElement()!
+        f.view.countFreeSpaces = Int.random(in: -100...100)
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
         {
@@ -43,8 +57,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 let annotationView = ParkingLotLocationView(annotation: annotation, reuseIdentifier: "parkingLot")
                 return annotationView
             }
-            
-            
             return nil
     }
     
@@ -52,7 +64,28 @@ class ViewController: UIViewController, MKMapViewDelegate {
 }
 
 extension MKMapView{
-    func visibleAnnotations() -> [ParkingLotAnnotation] {
-        return self.annotations(in: self.visibleMapRect).map { obj -> ParkingLotAnnotation in return obj as! ParkingLotAnnotation }
+    func visibleAnnotations(parkingMap: MKMapView) -> [ParkingLotLocationView] {
+        var toReturn: [ParkingLotLocationView] = []
+        for annotation in self.annotations{
+            
+            if let annotationView =  parkingMap.view(for: annotation) as? ParkingLotLocationView{
+                toReturn.append(annotationView)
+            }
+        }
+        return toReturn
     }
+}
+extension DispatchQueue {
+
+    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
+    }
+
 }
